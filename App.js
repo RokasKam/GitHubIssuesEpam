@@ -2,25 +2,13 @@ import React, { Component, useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, useColorScheme, View, FlatList, TextInput, TouchableOpacity, Dimensions, } from 'react-native';
 import { Octokit } from "@octokit/rest";
 import { Card, } from 'react-native-elements';
-import { GetSet } from './src/service/GetSet/GetSet'
+import { fetchIssues } from './src/service/fetchIssues/FetchIssues'
 
 const App = () => {
 
   const [Issues, setIssues] = useState([]);
   const [authCode, setAuthCode] = useState("");
   //"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"
-  const fetchIssues = (handlerIssues) => {
-    const octokit = new Octokit({
-      auth: authCode,
-    });
-    octokit.issues.list()
-      .then(result => {
-        handlerIssues(result.data);
-      })
-      .catch(err => {
-        console.log(err);
-      })
-  };
   return (
     <SafeAreaView style={styles.mainBlock}>
       <View style={styles.container}>
@@ -37,7 +25,7 @@ const App = () => {
           </View>
           <TouchableOpacity
             style={styles.loginButton}
-            onPress={fetchIssues(setIssues)}>
+            onPress={() => fetchIssues({ handlerIssues: setIssues, authCode: authCode })}>
             <Text style={styles.loginText}>Find</Text>
           </TouchableOpacity>
         </View>
