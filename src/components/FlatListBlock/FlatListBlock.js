@@ -1,27 +1,22 @@
 import React from 'react'
-import { StyleSheet, Text, View, FlatList, Dimensions } from 'react-native';
-import { Card, } from 'react-native-elements';
-import { styles } from './FlatList.style';
+import { FlatList } from 'react-native';
+import { styles } from './FlatListBlock.style';
+import { ListCard } from '../ListCard/ListCard';
 
-export const FlatListBlock = ({ Issues }) => {
+export const FlatListBlock = ({ Issues, handleOnEndReached, currentPageNumber }) => {
+    const END_REACHED_TRESHOLD = 0.5;
+    const onEndReachedHandler = () => handleOnEndReached(currentPageNumber + 1);
     return (
         < FlatList style={styles.listStyle}
             data={Issues}
+            onEndReached={() => onEndReachedHandler()}
+            onEndReachedThreshold={END_REACHED_TRESHOLD}
             renderItem={({ item }) =>
-                <View >
-                    <Card containerStyle={styles.cardStyle}>
-                        <View>
-                            <Text style={styles.cardTextStyle}>
-                                {item.title}
-                            </Text>
-                        </View>
-                        <View >
-                            <Text style={styles.cardTextStyle}>
-                                {item.repository.name}
-                            </Text>
-                        </View>
-                    </Card>
-                </View>}
+                <ListCard
+                    itemId={item.id}
+                    itemTitle={item.title}
+                />
+            }
         />
     )
 };
