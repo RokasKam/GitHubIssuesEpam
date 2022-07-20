@@ -1,10 +1,9 @@
 
-export const fetchIssues = ({ handlerIssues, organization, repository, pageNumper, currentIssues }) => {
+export const fetchIssues = ({ handlerIssues, organization, repository, pageNumper, currentIssues, whatIsBeingSearched }) => {
     const ISSUES_PER_PAGE = 8;
-    const apiLink = 'https://api.github.com/search/issues?q=is:issue+repo:'
+    const apiLink = 'https://api.github.com/search/issues?q=' + whatIsBeingSearched + 'repo:'
         + organization + '/' + repository
         + '&per_page=' + ISSUES_PER_PAGE + '&page=' + pageNumper;
-    console.log(apiLink);
     fetch(apiLink)
         .then(response => response.json())
         .then(data => {
@@ -14,6 +13,3 @@ export const fetchIssues = ({ handlerIssues, organization, repository, pageNumpe
             console.log(err);
         })
 } 
-    
- 
-    

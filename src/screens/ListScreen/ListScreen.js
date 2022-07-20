@@ -9,6 +9,7 @@ export const ListScreen = ({ route }) => {
     const [pageNumber, setPageNumber] = useState(1);
     const organization = route.params.organization;
     const repository = route.params.repository;
+    const whatIsBeingSearched = route.params.whatIsBeingSearched;
 
     useEffect(() => {
         fetchIssues({
@@ -17,6 +18,7 @@ export const ListScreen = ({ route }) => {
             repository: repository,
             pageNumper: pageNumber,
             currentIssues: Issues,
+            whatIsBeingSearched: whatIsBeingSearched
         });
     }, [pageNumber]);
 
