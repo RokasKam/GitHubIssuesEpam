@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/core';
 import { SearchButton } from '../../components/SearchButton/SearchButton';
 import { SearchInput } from '../../components/SearchTextInput/SearchInput';
 import { CheckBoxBlock } from '../../components/CheckBoxBlock/CheckBoxBlock';
+import { DropDownBlock } from '../../components/DropDownBlock/DropDownBlock';
 import { NavigateToListScreen } from '../../service/NavigateToListScreen/NavigateToListScreen';
 import { styles } from './MainScreen.style';
 
@@ -14,13 +15,15 @@ export const MainScreen = () => {
     const [findPullRequests, setFindPullRequests] = useState(false);
     const [organization, setOrganization] = useState("");
     const [repository, setRepository] = useState("");
+    const [howToSort, setHowToSort] = useState('created');
 
     const onPress = () => NavigateToListScreen({
         navigation: navigation,
         organization: organization,
         repository: repository,
         findIssues: findIssues,
-        findPullRequests: findPullRequests
+        findPullRequests: findPullRequests,
+        howToSort: howToSort
     });
 
     return (
@@ -45,6 +48,10 @@ export const MainScreen = () => {
                     text={"Pull requests"}
                     value={findPullRequests}
                     setValue={setFindPullRequests}
+                />
+                <DropDownBlock
+                    value={howToSort}
+                    setValue={setHowToSort}
                 />
                 <SearchButton
                     onPress={onPress}

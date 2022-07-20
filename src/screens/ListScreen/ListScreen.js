@@ -10,6 +10,7 @@ export const ListScreen = ({ route }) => {
     const organization = route.params.organization;
     const repository = route.params.repository;
     const whatIsBeingSearched = route.params.whatIsBeingSearched;
+    const howToSort = route.params.howToSort;
 
     useEffect(() => {
         fetchIssues({
@@ -18,7 +19,8 @@ export const ListScreen = ({ route }) => {
             repository: repository,
             pageNumper: pageNumber,
             currentIssues: Issues,
-            whatIsBeingSearched: whatIsBeingSearched
+            whatIsBeingSearched: whatIsBeingSearched,
+            howToSort: howToSort
         });
     }, [pageNumber]);
 
