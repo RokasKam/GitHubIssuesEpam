@@ -5,25 +5,24 @@ import { SearchButton } from '../../components/SearchButton/SearchButton';
 import { SearchInput } from '../../components/SearchTextInput/SearchInput';
 import { CheckBoxBlock } from '../../components/CheckBoxBlock/CheckBoxBlock';
 import { DropDownBlock } from '../../components/DropDownBlock/DropDownBlock';
-import { NavigateToListScreen } from '../../service/NavigateToListScreen/NavigateToListScreen';
+import { useNavigateToListScreen } from '../../hooks/useNavigateToListScreen';
 import { styles } from './MainScreen.style';
 
 export const MainScreen = () => {
 
-    const navigation = useNavigation();
+    const navigateToListScreen = useNavigateToListScreen();
     const [findIssues, setFindIssues] = useState(true);
     const [findPullRequests, setFindPullRequests] = useState(false);
     const [organization, setOrganization] = useState("");
     const [repository, setRepository] = useState("");
     const [howToSort, setHowToSort] = useState('created');
 
-    const onPress = () => NavigateToListScreen({
-        navigation: navigation,
-        organization: organization,
-        repository: repository,
-        findIssues: findIssues,
-        findPullRequests: findPullRequests,
-        howToSort: howToSort
+    const onPress = () => navigateToListScreen({
+        organization,
+        repository,
+        findIssues,
+        findPullRequests,
+        howToSort
     });
 
     return (

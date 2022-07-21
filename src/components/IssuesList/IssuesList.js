@@ -1,15 +1,15 @@
 import React from 'react'
 import { FlatList } from 'react-native';
-import { styles } from './FlatListBlock.style';
+import { styles } from './IssuesList.style';
 import { ListCard } from '../ListCard/ListCard';
+const END_REACHED_TRESHOLD = 0.5;
+export const IssuesList = ({ issues, handleOnEndReached, currentPageNumber }) => {
 
-export const FlatListBlock = ({ Issues, handleOnEndReached, currentPageNumber }) => {
-    const END_REACHED_TRESHOLD = 0.5;
     const onEndReachedHandler = () => handleOnEndReached(currentPageNumber + 1);
     return (
         < FlatList style={styles.listStyle}
-            data={Issues}
-            onEndReached={() => onEndReachedHandler()}
+            data={issues}
+            onEndReached={onEndReachedHandler}
             onEndReachedThreshold={END_REACHED_TRESHOLD}
             renderItem={({ item }) =>
                 <ListCard
