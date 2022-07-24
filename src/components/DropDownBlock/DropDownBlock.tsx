@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import { View, Text } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 import { styling } from './DropDownBlock.style';
+import { Props } from './DropDownBlock.type';
 
-export const DropDownBlock = ({ value, setValue }) => {
+export const DropDownBlock: React.FC<Props> = ({ value, setValue }) => {
 
     const [open, setOpen] = useState(false);
     const styles = styling(open);
     const items = [
-        { label: 'Created', value: 'created' },
-        { label: 'Updated', value: 'updated' },
-        { label: 'Popularity', value: 'popularity' },
-        { label: 'Long-running', value: 'long-runing' }
+        { label: 'Newest', value: 'created' },
+        { label: 'Recently updated', value: 'updated' },
+        { label: 'Most commented', value: 'comments' },
+        { label: 'Most reactions', value: 'reactions' }
     ];
 
     return (

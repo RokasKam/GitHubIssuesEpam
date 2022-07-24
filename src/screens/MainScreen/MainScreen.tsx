@@ -1,20 +1,16 @@
 import React, { useState } from 'react'
 import { View, SafeAreaView } from 'react-native';
-import { useNavigation } from '@react-navigation/core';
-import { SearchButton } from '../../components/SearchButton/SearchButton';
-import { SearchInput } from '../../components/SearchTextInput/SearchInput';
-import { CheckBoxBlock } from '../../components/CheckBoxBlock/CheckBoxBlock';
-import { DropDownBlock } from '../../components/DropDownBlock/DropDownBlock';
-import { useNavigateToListScreen } from '../../hooks/useNavigateToListScreen';
+import { CheckBoxBlock, DropDownBlock, SearchButton, SearchInput } from '../../components';
+import { useNavigateToListScreen } from '../../hooks/useNavigateToListScreen/useNavigateToListScreen';
 import { styles } from './MainScreen.style';
 
-export const MainScreen = () => {
+export const MainScreen: React.FC = () => {
 
     const navigateToListScreen = useNavigateToListScreen();
     const [findIssues, setFindIssues] = useState(true);
     const [findPullRequests, setFindPullRequests] = useState(false);
-    const [organization, setOrganization] = useState("");
-    const [repository, setRepository] = useState("");
+    const [organization, setOrganization] = useState<string>();
+    const [repository, setRepository] = useState<string>();
     const [howToSort, setHowToSort] = useState('created');
 
     const onPress = () => navigateToListScreen({

@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const styling = (open) =>
+export const styling = (open: boolean) =>
     StyleSheet.create({
         blockView: {
             alignItems: "center",
@@ -10,7 +10,7 @@ export const styling = (open) =>
             width: "80%",
         },
         dropDownContainer: {
-            height: open ? 210 : null,
+            height: open ? 210 : undefined,
             marginBottom: 20,
         },
         dropDownList: {
