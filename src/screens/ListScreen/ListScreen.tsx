@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import { styles } from './ListScreen.style';
 import { IssuesList } from '../../components';
-import { useFetchIssuesOnPageChange } from '../../hooks/useFetchIssuesOnPageChange/useFetchIssuesOnPageChange';
+import { useFetchIssuesOnPageChange } from '../../hooks';
 import { Props } from './ListScreen.type';
 
 export const ListScreen: React.FC<Props> = ({ route }) => {

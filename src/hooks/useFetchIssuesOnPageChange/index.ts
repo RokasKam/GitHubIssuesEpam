@@ -1,0 +1,1 @@
+export { useFetchIssuesOnPageChange } from './useFetchIssuesOnPageChange';

@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/core";
 import { useCallback } from "react";
 import { Alert } from 'react-native';
-import { Props, NavigateToList } from "./useNavigateToListScreen.type";
+import { Props, NavigateToList, useNavigateToListScreenType } from "./useNavigateToListScreen.type";
 
-export const useNavigateToListScreen = () => {
+export const useNavigateToListScreen: useNavigateToListScreenType = () => {
     const { navigate } = useNavigation<NavigateToList>();
     const navigateToListScreen = useCallback(({ organization, repository, findIssues, findPullRequests, howToSort }: Props) => {
         findIssues || findPullRequests ?

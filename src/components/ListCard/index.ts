@@ -1,2 +1,1 @@
-import { ListCard } from "./ListCard";
-export { ListCard };
+export { ListCard } from "./ListCard";

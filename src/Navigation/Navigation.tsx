@@ -1,13 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { ListScreen } from '../screens/ListScreen/ListScreen';
-import { MainScreen } from '../screens/MainScreen/MainScreen';
+import { MainScreen, ListScreen } from '../screens';
 import { NavigatorParams } from './Navigation.types';
 
 const Stack = createNativeStackNavigator<NavigatorParams>();
 
-export const Navigation = () => {
+export const Navigation: React.FC = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Search">

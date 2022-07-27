@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#ffffff",
+      "borderColor": "#e1e8ee",
+      "borderRadius": 15,
+      "borderWidth": 1,
+      "color": "white",
+      "height": 190.57142857142858,
+      "margin": 15,
+      "marginBottom": 8,
+      "marginLeft": 8,
+      "marginRight": 8,
+      "marginTop": 15,
+      "padding": 15,
+      "shadowColor": "rgba(0,0,0, .2)",
+      "shadowOffset": Object {
+        "height": 0,
+        "width": 0,
+      },
+      "shadowOpacity": 1,
+      "shadowRadius": 1,
+      "width": 625,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+      }
+    }
+  >
+    <View>
+      <Text
+        style={
+          Object {
+            "fontFamily": "Hiragino sans",
+            "fontSize": 22.233333333333334,
+            "fontStyle": "normal",
+            "fontWeight": "500",
+            "marginBottom": 10,
+          }
+        }
+      />
+    </View>
+    <View>
+      <Text
+        style={
+          Object {
+            "fontFamily": "Hiragino sans",
+            "fontSize": 22.233333333333334,
+            "fontStyle": "normal",
+            "fontWeight": "500",
+            "marginBottom": 10,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

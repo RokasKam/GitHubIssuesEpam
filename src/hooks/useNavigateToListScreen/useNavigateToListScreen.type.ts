@@ -11,3 +11,7 @@ export type Props = {
 };
 
 export type NavigateToList = StackNavigationProp<NavigatorParams, 'List'>;
+
+type navigateToListScreenType = (args: Props) => void;
+
+export type useNavigateToListScreenType = () => navigateToListScreenType;

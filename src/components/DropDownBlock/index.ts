@@ -1,2 +1,1 @@
-import { DropDownBlock } from "./DropDownBlock";
-export { DropDownBlock };
+export { DropDownBlock } from "./DropDownBlock";

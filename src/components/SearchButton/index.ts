@@ -1,2 +1,1 @@
-import { SearchButton } from "./SearchButton";
-export { SearchButton };
+export { SearchButton } from "./SearchButton";

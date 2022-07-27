@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { View, SafeAreaView } from 'react-native';
 import { CheckBoxBlock, DropDownBlock, SearchButton, SearchInput } from '../../components';
-import { useNavigateToListScreen } from '../../hooks/useNavigateToListScreen/useNavigateToListScreen';
+import { useNavigateToListScreen } from '../../hooks';
 import { styles } from './MainScreen.style';
 
 export const MainScreen: React.FC = () => {

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchIssues } from "../../service/fetchIssues/fetchIssues";
-import { getApiLink } from "../../service/getApiLink/getApiLink";
+import { fetchIssues, getApiLink } from "../../service";
 import { Params } from "./useFetchIssuesOnPageChange.type";
 
 export const useFetchIssuesOnPageChange = (pageNumber: number, params: Params) => {

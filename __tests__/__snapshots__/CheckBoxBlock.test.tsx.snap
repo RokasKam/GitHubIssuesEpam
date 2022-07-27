@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "marginBottom": 20,
+    }
+  }
+>
+  <View
+    accessibilityRole="checkbox"
+    accessibilityState={
+      Object {
+        "checked": false,
+        "disabled": false,
+      }
+    }
+    accessibilityValue={
+      Object {
+        "text": "off",
+      }
+    }
+    accessible={true}
+    pointerEvents="auto"
+  >
+    <RNCCheckbox
+      forwardedRef={null}
+      onCheckColor="#00bf33"
+      onTintColor="#00bf33"
+      onValueChange={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "height": 32,
+            "width": 32,
+          },
+          undefined,
+        ]
+      }
+      tintColors={
+        Object {
+          "false": "gray",
+          "true": "#00bf33",
+        }
+      }
+      value={false}
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#323C4C",
+        "marginLeft": 10,
+      }
+    }
+  />
+</View>
+`;

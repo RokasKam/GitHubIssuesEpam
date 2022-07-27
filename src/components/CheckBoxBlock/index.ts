@@ -1,2 +1,1 @@
-import { CheckBoxBlock } from "./CheckBoxBlock";
-export { CheckBoxBlock };
+export { CheckBoxBlock } from "./CheckBoxBlock";
